@@ -1,1 +1,1 @@
-# diruso
+# [shyrz.me](https://shyrz.me)

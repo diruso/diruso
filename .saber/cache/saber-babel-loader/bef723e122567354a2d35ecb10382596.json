@@ -1,0 +1,1 @@
+{"ast":null,"code":"import tinydate from 'tinydate';\nvar format = tinydate('{YYYY}/{MM}/{DD}');\nexport default (function (date) {\n  return date instanceof Date ? format(date) : format(new Date(date));\n});","map":null,"metadata":{},"sourceType":"module"}

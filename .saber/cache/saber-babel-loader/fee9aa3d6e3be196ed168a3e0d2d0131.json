@@ -1,0 +1,1 @@
+{"ast":null,"code":"//\n//\n//\n//\n//\n//\n//\n//\nimport Base from '../components/Base';\nexport default {\n  props: ['page'],\n  components: {\n    Base: Base\n  }\n};","map":null,"metadata":{},"sourceType":"module"}
