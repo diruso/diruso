@@ -2,6 +2,10 @@
 title: 当我垂垂老矣，请让我有尊严地死去
 layout: post
 date: 2014-05-14
+categories:
+  - 长相思
+tags:
+  - 爱与死
 ---
 
 昨天晚上看望卧病在床的爷爷。

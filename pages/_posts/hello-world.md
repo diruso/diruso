@@ -2,8 +2,11 @@
 title: Hello World
 date: 2019-02-22
 layout: post
+categories:
+  - Hello World
+comments: false
 ---
 
-## Hello
+# Hello World
 
-This is my hello world post.
+This is my first post.

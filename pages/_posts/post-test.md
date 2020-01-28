@@ -8,9 +8,10 @@ tags:
   - 测试标签
 ---
 
+[TOC]
+
 # h1 Heading
 ## h2 Heading
-
 ### h3 Heading
 #### h4 Heading
 ##### h5 Heading
@@ -145,11 +146,13 @@ Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 ## Images
 
 ![Minion](https://octodex.github.com/images/minion.png)
+
 ![Unsplash](https://images.unsplash.com/photo-1579119113817-12b7f99dd4b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80 "Unsplash")
 
 Like links, Images also have a footnote style syntax
 
-![Alt text][id]
+![Alt text][id]{:.shadow-it}
+{:.round-it}
 
 With a reference later in the document defining the URL location:
 
@@ -248,6 +251,19 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 *here be dragons*
 :::
 
+### Kramdown
+
+Info{:.info}
+
+Success{:.success}
+
+Warning{:.warning}
+
+Error{:.error}
+
+Tips{:.tips}
+
+Todo{:.todo}
 
 ### LaTeX
 $$
