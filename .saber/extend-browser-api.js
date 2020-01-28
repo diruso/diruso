@@ -1,5 +1,5 @@
 
-      var _saber_browser_js_0 = require("/Users/noxium/Repository/shyrz.github.io/node_modules/saber-plugin-feed/lib/saber-browser.js").default
+      var _saber_browser_js_0 = require("/Users/noxium/shyrz/node_modules/saber-plugin-feed/lib/saber-browser.js").default
 
       var themeBrowserApi
       var rTheme = require.context('#theme', false, /\.\/saber-browser\.[jt]s$/)

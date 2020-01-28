@@ -1,1 +1,0 @@
-{"ast":null,"code":"import DOMAIN from '../../constants/contact.yml';\nexport default (function (name, key) {\n  if (DOMAIN[name]) {\n    return DOMAIN[name][key];\n  }\n});","map":null,"metadata":{},"sourceType":"module"}
