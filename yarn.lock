@@ -2247,7 +2247,7 @@ enhanced-resolve@^4.1.0:
     memory-fs "^0.5.0"
     tapable "^1.0.0"
 
-entities@^1.1.1:
+entities@^1.1.1, entities@~1.1.1:
   version "1.1.2"
   resolved "http://r.cnpmjs.org/entities/download/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
   integrity sha1-vfpzUplmTfr9NFKe1PhSKidf6lY=
@@ -3418,6 +3418,13 @@ levenary@^1.1.0:
   dependencies:
     leven "^3.1.0"
 
+linkify-it@^2.0.0:
+  version "2.2.0"
+  resolved "http://r.cnpmjs.org/linkify-it/download/linkify-it-2.2.0.tgz#e3b54697e78bf915c70a38acd78fd09e0058b1cf"
+  integrity sha1-47VGl+eL+RXHCjis14/QngBYsc8=
+  dependencies:
+    uc.micro "^1.0.1"
+
 loader-runner@^2.4.0:
   version "2.4.0"
   resolved "http://r.cnpmjs.org/loader-runner/download/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
@@ -3592,10 +3599,23 @@ markdown-it-footnote@^3.0.2:
   resolved "http://r.cnpmjs.org/markdown-it-footnote/download/markdown-it-footnote-3.0.2.tgz#1575ee7a093648d4e096aa33386b058d92ac8bc1"
   integrity sha1-FXXuegk2SNTglqozOGsFjZKsi8E=
 
+markdown-it-implicit-figures@^0.9.0:
+  version "0.9.0"
+  resolved "http://r.cnpmjs.org/markdown-it-implicit-figures/download/markdown-it-implicit-figures-0.9.0.tgz#21bf562ab4fd177828febb5e24eda571cf9d1a58"
+  integrity sha1-Ib9WKrT9F3go/rteJO2lcc+dGlg=
+
 markdown-it-ins@^3.0.0:
   version "3.0.0"
   resolved "http://r.cnpmjs.org/markdown-it-ins/download/markdown-it-ins-3.0.0.tgz#b1b56824c78dc66e52b0fc97531b317cd78d79d2"
   integrity sha1-sbVoJMeNxm5SsPyXUxsxfNeNedI=
+
+markdown-it-kramdown-attrs@^0.1.0:
+  version "0.1.0"
+  resolved "http://r.cnpmjs.org/markdown-it-kramdown-attrs/download/markdown-it-kramdown-attrs-0.1.0.tgz#5fa02bbdc4dfd3e4aeb438c835acff994875c03b"
+  integrity sha1-X6ArvcTf0+SutDjINaz/mUh1wDs=
+  dependencies:
+    markdown-it "^8.0.1"
+    shell-quote "^1.6.1"
 
 markdown-it-mark@^3.0.0:
   version "3.0.0"
@@ -3617,6 +3637,22 @@ markdown-it-task-lists@^2.1.1:
   resolved "http://r.cnpmjs.org/markdown-it-task-lists/download/markdown-it-task-lists-2.1.1.tgz#f68f4d2ac2bad5a2c373ba93081a1a6848417088"
   integrity sha1-9o9NKsK61aLDc7qTCBoaaEhBcIg=
 
+markdown-it-toc@^1.1.0:
+  version "1.1.0"
+  resolved "http://r.cnpmjs.org/markdown-it-toc/download/markdown-it-toc-1.1.0.tgz#6d189858e32b3deb4ff3ad2713fa927439c957e0"
+  integrity sha1-bRiYWOMrPetP860nE/qSdDnJV+A=
+
+markdown-it@^8.0.1:
+  version "8.4.2"
+  resolved "http://r.cnpmjs.org/markdown-it/download/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
+  integrity sha1-OG+YmY3BWjdyKqdyIIT0Agvdm1Q=
+  dependencies:
+    argparse "^1.0.7"
+    entities "~1.1.1"
+    linkify-it "^2.0.0"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.5"
+
 matchit@^1.0.0:
   version "1.0.8"
   resolved "http://r.cnpmjs.org/matchit/download/matchit-1.0.8.tgz#9a129e38f79b2053dd75339215b19e1f6bb88efb"
@@ -3637,6 +3673,11 @@ mdn-data@2.0.4:
   version "2.0.4"
   resolved "http://r.cnpmjs.org/mdn-data/download/mdn-data-2.0.4.tgz#699b3c38ac6f1d728091a64650b65d388502fd5b"
   integrity sha1-aZs8OKxvHXKAkaZGULZdOIUC/Vs=
+
+mdurl@^1.0.1:
+  version "1.0.1"
+  resolved "http://r.cnpmjs.org/mdurl/download/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
+  integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
 
 memory-fs@^0.4.1:
   version "0.4.1"
@@ -3780,11 +3821,6 @@ mkdirp@^0.5.1, mkdirp@~0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
-
-modern-normalize@^0.5.0:
-  version "0.5.0"
-  resolved "http://r.cnpmjs.org/modern-normalize/download/modern-normalize-0.5.0.tgz#7f75bb7319c6ae708d716658dc8d9c9760274887"
-  integrity sha1-f3W7cxnGrnCNcWZY3I2cl2AnSIc=
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -4963,27 +4999,6 @@ saber-plugin-query-posts@^0.4.5:
     slugo "^0.3.1"
     url-join "^4.0.0"
 
-saber-plugin-seo@^0.1.3:
-  version "0.1.3"
-  resolved "http://r.cnpmjs.org/saber-plugin-seo/download/saber-plugin-seo-0.1.3.tgz#1aa4bd08bc071705f73c0ec19d65c4c6d4823ef7"
-  integrity sha1-GqS9CLwHFwX3PA7BnWXExtSCPvc=
-
-saber-theme-minima@^3.2.2:
-  version "3.2.2"
-  resolved "http://r.cnpmjs.org/saber-theme-minima/download/saber-theme-minima-3.2.2.tgz#4ed0ffc6530c28a8b95d58a64a85854aaa2f630f"
-  integrity sha1-TtD/xlMMKKi5XVimSoWFSqovYw8=
-  dependencies:
-    tinydate "^1.2.0"
-
-saber-theme-paper@^0.1.12:
-  version "0.1.12"
-  resolved "http://r.cnpmjs.org/saber-theme-paper/download/saber-theme-paper-0.1.12.tgz#378a5c7cc4b554407ba842577caa0d969ee748a6"
-  integrity sha1-N4pcfMS1VEB7qEJXfKoNlp7nSKY=
-  dependencies:
-    modern-normalize "^0.5.0"
-    saber-plugin-seo "^0.1.3"
-    tinydate "^1.0.1"
-
 saber-utils@^0.2.4:
   version "0.2.4"
   resolved "http://r.cnpmjs.org/saber-utils/download/saber-utils-0.2.4.tgz#c7844eafaf5da0aa950a7ec527d1e8c491e69ada"
@@ -5194,6 +5209,11 @@ shallow-clone@^3.0.0:
   integrity sha1-jymBrZJTH1UDWwH7IwdppA4C76M=
   dependencies:
     kind-of "^6.0.2"
+
+shell-quote@^1.6.1:
+  version "1.7.2"
+  resolved "http://r.cnpmjs.org/shell-quote/download/shell-quote-1.7.2.tgz#67a7d02c76c9da24f99d20808fcaded0e0e04be2"
+  integrity sha1-Z6fQLHbJ2iT5nSCAj8re0ODgS+I=
 
 signal-exit@^3.0.2:
   version "3.0.2"
@@ -5590,11 +5610,6 @@ tiny-invariant@^1.0.6:
   resolved "http://r.cnpmjs.org/tiny-invariant/download/tiny-invariant-1.0.6.tgz#b3f9b38835e36a41c843a3b0907a5a7b3755de73"
   integrity sha1-s/mziDXjakHIQ6OwkHpaezdV3nM=
 
-tinydate@^1.0.1, tinydate@^1.2.0:
-  version "1.2.0"
-  resolved "http://r.cnpmjs.org/tinydate/download/tinydate-1.2.0.tgz#36b4bb02715f89743f3ef9073d3573d005a28d0e"
-  integrity sha1-NrS7AnFfiXQ/PvkHPTVz0AWijQ4=
-
 to-arraybuffer@^1.0.0:
   version "1.0.1"
   resolved "http://r.cnpmjs.org/to-arraybuffer/download/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
@@ -5682,6 +5697,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "http://r.cnpmjs.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+uc.micro@^1.0.1, uc.micro@^1.0.5:
+  version "1.0.6"
+  resolved "http://r.cnpmjs.org/uc.micro/download/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"
+  integrity sha1-nEEagCpAmpH8bPdAgbq6NLJEmaw=
 
 unbzip2-stream@^1.0.9:
   version "1.3.3"
