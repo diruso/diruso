@@ -1,15 +1,17 @@
 <template>
-  <div id="app">
+  <div id="app" v-on:mousemove="handleMouseMove">
     <div id="top">
       <div id="topbar"></div>
     </div>
     <div id="wrapper">
       <Header
         :siteTitle="siteTitle"
-        :description="description" />
+        :description="description"
+        :style="{ transform: 'translateX(' + x*0.005 + 'px) translateY(' + y*0.005 + 'px)' }"
+      />
       <main id="container">
         <div id="content">
-          <slot></slot>
+          <slot name="default" />
         </div>
       </main>
       <Footer
@@ -76,6 +78,12 @@ export default {
       ]
     }
   },
+  data() {
+    return {
+      x: 0,
+      y: 0
+    };
+  },
   computed: {
     siteTitle() {
       return this.$siteConfig.title;
@@ -85,51 +93,12 @@ export default {
     }
   },
   methods: {
-    formatDate
+    formatDate,
+    handleMouseMove: function(e) {
+      // console.log(e.clientX, e.clientY);
+      this.x = e.clientX;
+      this.y = e.clientY;
+    }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../styles/main.scss';
-
-#app {
-  // background: $black;
-}
-
-#wrapper {
-  width: 100vw;
-  max-width: 100vw;
-  // padding-top: 10px;
-}
-
-#top {
-  // position: fixed;
-  // width: 100vw;
-  // height: 10px;
-  // background: #0A0A0A;
-}
-
-#container {
-
-}
-
-#content {
-  display: block;
-  position: relative;
-  padding: 21px 0;
-  width: 70vw;
-  max-width: 732px;
-  // margin: 50px auto 0 15vw;
-  margin: 50px auto 0;
-  border-radius: 20px;
-  // background: $dark-0;
-  background: $white;
-  backdrop-filter: blur(20px);
-  // box-shadow: 0px 10px 20px 0px rgba(236, 236, 236, 0.86);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 40px;
-  // transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
-}
-
-
-</style>

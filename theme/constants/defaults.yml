@@ -1,5 +1,78 @@
+# 站点
 site:
   title: Your Awesome Site
   description: An apt description of your awesome site or yourself.
 
   license: 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议
+
+# 联系方式
+contact:
+  dribbble:
+    url: https://dribbble.com/
+    icon: fab fa-dribbble
+  facebook:
+    url: https://facebook.com/
+    icon: fab fa-facebook-square
+  flickr:
+    url: https://www.flickr.com/photos/
+    icon: fab fa-flickr
+  github:
+    url: https://github.com/
+    icon: fab fa-github
+  googleplus:
+    url: https://plus.google.com/
+    icon: fab fa-google-plus
+  instagram:
+    url: https://www.instagram.com/
+    icon: fab fa-instagram
+  keybase:
+    url: https://keybase.io/
+    icon: fab fa-keybase
+  linkedin:
+    url: https://www.linkedin.com/in/
+    icon: fab fa-linkedin-in
+  medium:
+    url: 'https://medium.com/@'
+    icon: fab fa-medium-m
+  microblog:
+    url: https://micro.blog/
+    icon: fab fa-microblog
+  neteasemusic:
+    url: https://music.163.com/#/user/home?id=
+    icon: fas fa-compact-disc
+  pinterest:
+    url: https://www.pinterest.com/
+    icon: fab fa-pinterest
+  reddit:
+    url: https://reddit.com/user/
+    icon: fab fa-reddit-alien
+  skype:
+    url: https://skype.com/
+    icon: fa fa-skype
+  soundcloud:
+    url: https://soundcloud.com/
+    icon: fab fa-soundcloud
+  spotify:
+    url: https://spotify.com/
+    icon: fab fa-spotify
+  steam:
+    url: https://steamcommunity.com/id/
+    icon: fab fa-steam-symbol
+  twitter:
+    url: https://twitter.com/
+    icon: fab fa-twitter
+  telegram:
+    url: https://t.me/
+    icon: fab fa-telegram
+  weibo:
+    url: https://weibo.com/
+    icon: fab fa-weibo
+  whatsapp:
+    url: https://whatsapp.com/
+    icon: fab fa-whatsapp
+  youtube:
+    url: https://www.youtube.com/user/
+    icon: fab fa-youtube
+  zhihu:
+    url: https://zhihu.com/people/
+    icon: fab fa-zhihu

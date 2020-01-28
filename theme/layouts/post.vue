@@ -1,7 +1,7 @@
 <template>
   <Base :page="page">
     <div class="post">
-      <!-- 文章信息 -->
+      <!-- 头部信息 -->
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">{{ page.attributes.title }}</h1>
         <div class="post-meta">
@@ -10,6 +10,23 @@
             :datetime="page.attributes.createdAt"
             itemprop="datePublished"
           >{{ formatDate(page.attributes.createdAt) }}</time>
+        </div>
+      </header>
+
+      <!-- 文章内容 -->
+      <article class="han-init-context">
+        <slot name="default" />
+      </article>
+
+
+      <!-- 底部信息 -->
+      <footer class="post-footer">
+        <div class="post-note">
+          <p>欢迎在<strong>评论区</strong>留言，同时也欢迎<a href="mailto:i@sh7.me">发电子邮件</a>与我讨论。</p>
+          <p>如果觉得本文还不错，欢迎<saber-link rel="donate" to="/donate">请我一杯咖啡</saber-link>。</p>
+          <p>本作品采用<a class="license-link" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。</p>
+        </div>
+        <div class="post-meta">
           <div
             class="category"
             v-if="page.attributes.categories"
@@ -33,16 +50,11 @@
                 v-for="(tag, i) in page.attributes.tags"
                 :key="tag.toString()"
                 :href="page.attributes.tagsInfo[i].permalink"
-              >#{{ tag }}</a>
+              >{{ tag }}</a>
             </span>
           </div>
         </div>
-      </header>
-
-      <!-- 文章内容 -->
-      <article class="han-init-context">
-        <slot name="default" />
-      </article>
+      </footer>
 
       <!-- 分页 -->
       <div class="pagination">
@@ -60,7 +72,7 @@
       <!-- 第三方评论系统 -->
       <!-- Disqus -->
       <Disqus
-        v-if="page.attributes.comments !== false && $themeConfig.disqus"
+        v-if="page.comments !== false && $themeConfig.disqus"
         :url="$siteConfig.url"
         :permalink="page.attributes.permalink"
         :shortname="$themeConfig.disqus"
@@ -93,71 +105,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/main.scss';
 
-h1.post-title {
-  margin: 21px 21px 12px;
-  font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif, $aeon-font-emoji;
-  color: $black;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-}
-
-.post-meta {
-  margin: 12px 21px;
-  font-style: italic;
-  time.published {
-    font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif;
-    color: $gray;
-  }
-  .category, .tag {
-    margin-top: 12px;
-    color: $gray;
-    a {
-      margin-right: 12px;
-      font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif;
-      color: $gray;
-      &:hover, &:active {
-        color: $highlight;
-        background: transparent;
-      }
-    }
-  }
-}
-
-// article.han-init-context {
-//   padding: 0 21px;
-// }
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 21px;
-  a {
-    padding: 21px 0;
-    font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif, $aeon-font-emoji;
-    // font-weight: 00;
-    text-decoration: none;
-    &:hover, &:active {
-      // background: $dark-0;
-      strong {
-        color: $black;
-      }
-      p {
-        color: $highlight;
-      }
-    }
-    
-    p {
-      font-weight: 200;
-      margin: 10px 0 0;
-    }
-  }
-  a.prev {
-    text-align: left;
-  }
-  a.next {
-    text-align: right;
-  }
-}
 </style>

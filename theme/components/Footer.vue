@@ -1,5 +1,6 @@
 <template>
 	<footer id="footer">
+    <!-- 授权许可 -->
 		<p class="license">
       本站点所有内容采用
 			<a
@@ -9,6 +10,7 @@
 			>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
       进行许可。
 		</p>
+    <!-- 版权信息 -->
 		<p class="copyright">
 			Proudly published by 
 			<a class="power" href="https://saber.land">
@@ -22,61 +24,36 @@
         Aeon
       </a>
 		</p>
+    <!-- 联系方式 -->
     <p class="contact">
-      <Contact />
+      <ul>
+        <li v-for="(item, name, i) in contact" v-if="contact[name]">
+          <a :href="importContact(name, 'url') + item" :title="contact[name]">
+            <i :class="importContact(name, 'icon')"></i>
+          </a>
+        </li>
+      </ul>
     </p>
 	</footer>
 </template>
 
 <script>
-import Contact from '../components/Contact';
+import d_ from '../constants/defaults.yml';
 
 export default {
-  components: { Contact }
+  components: { },
+  computed: {
+    contact() {
+      return this.$themeConfig.contact || {}
+    },
+    feed() {
+      return this.$feed
+    },
+  },
+  methods: {
+    importContact: function(name, key) {
+      return d_.contact[name] && d_.contact[name][key];
+    }
+  }
 };
 </script>
-
-<style lang="scss" scoped>
-@import '../styles/main.scss';
-
-#footer {
-  padding: 50px 0;
-  text-align: center;
-  font-family: $aeon-font-sans, $aeon-font-latin-sans, sans-serif, $aeon-font-emoji;
-  font-weight: 300;
-  font-size: 15px;
-  color: $gray;
-
-  .license {
-
-    .license-link {
-      font-weight: 500;
-      img {
-        margin-bottom: -1px;
-      }
-    }
-  }
-
-  .copyright {
-    a.power, a.theme {
-      margin-right: 2px;
-    }
-    a.power {
-      // border-color:  #E9B439;
-      color: #49828D;
-      &:hover, &:active {
-        // border-bottom-color: #49828D;
-        // background: #49828D;
-        color: #E9B439;
-      }
-      svg {
-        margin-bottom: -2px;
-      }
-    }
-
-    a.theme:hover, a.theme:active {
-      color: $highlight;
-    }
-  }
-}
-</style>

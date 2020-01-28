@@ -1,7 +1,9 @@
 <template>
   <Base :page="page">
     <div class="page">
-      <slot name="default" />
+      <article class="han-init-context">
+        <slot name="default" />
+      </article>
     </div>
   </Base>
 </template>
