@@ -1,102 +1,18 @@
 @charset 'utf-8';
 
-@import './variable.scss';
-@import './animation.scss';
-
-// ---------------------------------------------------------------
-// Font
-// ---------------------------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+SC:200,300,400,500,600,700,900|Noto+Serif+TC:200,300,400,500,600,700,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:200,300,400,500,600,700,900|Noto+Sans+TC:200,300,400,500,600,700,900&display=swap');
-
-// 源流明體
-@font-face {
-  font-family: '源流明體';
-  src: url('../assets/fonts/源流明體/GenRyuMinTW-ExtraLight.ttf');
-  font-weight: 200;
-}
-@font-face {
-  font-family: '源流明體';
-  src: url('../assets/fonts/源流明體/GenRyuMinTW-Light.ttf');
-  font-weight: 300;
-}
-@font-face {
-  font-family: '源流明體';
-  src: url('../assets/fonts/源流明體/GenRyuMinTW-Regular.ttf');
-  font-weight: 400;
-}
-@font-face {
-  font-family: '源流明體';
-  src: url('../assets/fonts/源流明體/GenRyuMinTW-Medium.ttf');
-  font-weight: 500;
-}
-@font-face {
-  font-family: '源流明體';
-  src: url('../assets/fonts/源流明體/GenRyuMinTW-SemiBold.ttf');
-  font-weight: 400;
-}
-@font-face {
-  font-family: '源流明體';
-  src: url('../assets/fonts/源流明體/GenRyuMinTW-Bold.ttf');
-  font-weight: 700;
-}
-@font-face {
-  font-family: '源流明體';
-  src: url('../assets/fonts/源流明體/GenRyuMinTW-Heavy.ttf');
-  font-weight: 900;
-}
-
-$aeon-font-sans: 'Noto Sans TC', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica Neue, Arial;
-$aeon-font-serif: '源流明體', 'Noto Serif TC', 'Noto Serif SC';
-$aeon-font-mono: Source Code Pro, PT Mono, Monaco, menlo, 'Courier New', Courier, monospace;
-$aeon-font-latin-sans: Avenir Next, Helvetica Neue, Lato, Arial;
-$aeon-font-latin-serif: Charter, Palatino, Athelas, Iowan, Georgia, 'Times New Roman', Times;
-$aeon-font-emoji: 'Apple Color Emoji', 'Segoe UI Emoji';
-
-// $aeon-font-hans: Biaodian Pro Serif CNS,Numeral LF Serif,MOEDICT,Fira Sans OT,Georgia,Times New Roman,Zhuyin Kaiti,TW-Sung-98_1,教育部標準宋體,MOESongUN,全字庫正宋體,Songti TC,宋體-繁,Lisong Pro,儷宋 pro,文鼎ＰＬ新宋,cwtex 仿宋體,PMingLiU,MingLiU,serif,HanaMinA,HanaMinB,HAN NOM A,HAN NOM B,Han Songti CNS,serif;
-
-
-
-
-// // Aeon Sans
-// @font-face {
-//   font-family: AeonSans;
-//   src: local(Heiti TC),
-//        local(Microsoft Jhenghei);
-//   /* no unicode-range; default to all characters */
-// }
-
-// /* Latin characters 專用 */
-// @font-face {
-//   font-family: AeonSans; /* 同樣的 font-family */
-//   unicode-range: U+00-024F;  /* Latin, Latin1 Sup., Ext-A, Ext-B */
-//   src: local(Avenir Next),     /* OS X preferred */
-//        local(Avenir),
-//        local(Helvetica Neue),
-//        local(Arial);         /* Other OS */
-// }
-
-// /* 注音符號專用 */
-// @font-face {
-//   font-family: AeonSans;      /* 同樣的 font-family */
-//   unicode-range: U+3100-312F;     /* Bopomofo */
-//   src: local(LiHei Pro),          /* OS X */
-//        local(Microsoft Jhenghei); /* Windows Vista+ */
-// }
-
-// /* 日文假名專用 */
-// @font-face {
-//   font-family: AeonSans;            /* 同樣的 font-family */
-//   unicode-range: U+3040-30FF;           /* Hiragana, Katakana */
-//   src: local(Hiragino Kaku Gothic Pro), /* OS X */
-//        local(Meiryo);                   /* Windows Vista+ */
-// }
+@import 'variable.scss';
+@import 'font.scss';
+@import 'animation.scss';
 
 html, body {
 	font-family: $aeon-font-latin-serif, $aeon-font-serif, serif;
-	font-display: swap;
+	text-align: justify;
   color: $dark-1;
   // background: $black;
+}
+
+::selection {
+	background: $light-2;
 }
 
 a, a:link {
@@ -148,7 +64,7 @@ img {
 	background: $light-1;
 	border-color: $gray;
 	&:before {
-		content: '⚠︎';
+		content: '⚠️';
 		margin-right: 16px;
 		color: $gray;
 	}
@@ -157,8 +73,8 @@ img {
 	background: lighten($color: $orange, $amount: 40%);
 	border-color: $orange;
 	&:before {
-		content: '⚑';
-		margin: 0 16px 0 6px;
+		content: '☑️';
+		margin-right: 16px;
 		color: $orange;
 	}
 }
@@ -176,6 +92,8 @@ img {
 // Header
 // ---------------------------------------------------------------
 header#header {
+
+	
   nav#nav {
 		display: flex;
 		align-items: flex-end;
@@ -185,6 +103,15 @@ header#header {
 
     .nav-info {
       h1 {
+				#logo {
+					float: left;
+					margin-right: 12px;
+					// display: block;
+					img {
+						display: inline-block;
+						height: 48px;
+					}
+				}
         a.title {
           font-size: 42px;
 					font-weight: 900;
@@ -328,6 +255,12 @@ div.post {
 // Markdown
 // ---------------------------------------------------------------
 article.han-init-context {
+
+	iframe {
+		display: block;
+		margin: 0 auto;
+		border: 0;
+	}
 	
 	strong {
     font-family: $aeon-font-latin-serif, $aeon-font-serif, serif;
@@ -360,10 +293,11 @@ article.han-init-context {
 
 	a {
 
-  }
-
-  ul, ol {
-    margin: 0 21px 16px;
+	}
+	
+  > ul, > ol {
+		margin-left: 21px;
+		margin-right: 21px;
   }
 
 	blockquote {
@@ -385,6 +319,7 @@ article.han-init-context {
 		text-align: center;
 		margin: 0 21px 12px;
 		img {
+			margin: 0 auto;
 			border-radius: 4px;
 			// box-shadow: 0 1px 2px rgba(46,41,51,.08), 0 2px 4px rgba(71,63,79,.08);
 			// -webkit-transition: all .25s cubic-bezier(.4,0,.2,1);
@@ -394,6 +329,10 @@ article.han-init-context {
 			// 	-webkit-transform: translateY(-5px);
 			// 	transform: translateY(-5px);
 			// }
+		}
+		figcaption {
+			margin-top: 6px;
+			font-family: $aeon-font-latin-sans, $aeon-font-sans, serif;
 		}
 	}
 
@@ -424,7 +363,7 @@ article.han-init-context {
 			// position: absolute;
 			// left: -.35em;
 			margin-right: 4px;
-      font-family: $aeon-font-sans, $aeon-font-latin-sans, sans-serif;
+      font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif;
       font-weight: 100;
 			text-decoration: none;
 			// color: $gray;
@@ -517,7 +456,8 @@ article.han-init-context {
 		border-radius: 3px;
 		background: $light-1;
 		font-family: $aeon-font-mono;
-		font-size: 0.9em;
+		font-size: 13px;
+		line-height: 1.2;
 		// color: ;
 	}
 
@@ -525,7 +465,7 @@ article.han-init-context {
     margin: 0 21px 12px;
     background: $light-1;
     &:before {
-      font-family: $aeon-font-sans, $aeon-font-latin-sans, sans-serif;
+      font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif;
     }
 
     .saber-highlight-mask {
@@ -544,6 +484,7 @@ article.han-init-context {
 		// border: 1px solid $aeon-blue;
 		border-radius: 4px;
 		background: $light-1;
+		font-size: 14px;
 		line-height: 1.5;
 		
 		> code {
@@ -634,6 +575,7 @@ article.han-init-context {
 	// Footnote
 	// ---------------------------------------------------------------
   section.footnotes {
+		margin: 0 21px;
     font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif;
     strong {
 			font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif;
@@ -709,12 +651,12 @@ article.han-init-context {
 	
 	.contact {
 		ul {
+			list-style: none;
 			display: flex;
 			justify-content: center;
 			align-items: baseline;
 			margin: 0;
 			padding: 0;
-			list-style: none;
 			li {
 				padding: 0 3px;
 				a {
@@ -736,6 +678,10 @@ article.han-init-context {
   html, body {
     background: $black;
     color: $gray;
+	}
+
+	::selection {
+		background: $black;
 	}
 	
 	a, a:link {
@@ -765,16 +711,12 @@ article.han-init-context {
 	.tips {
 		border-color: $gray;
 		&:before {
-			content: '⚠︎';
-			margin-right: 16px;
 			color: $gray;
 		}
 	}
 	.todo {
 		border-color: $orange-dark;
 		&:before {
-			content: '⚑';
-			margin-right: 16px;
 			color: $orange-dark;
 		}
 	}
