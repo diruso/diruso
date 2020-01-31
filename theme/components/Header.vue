@@ -2,9 +2,16 @@
   <header id="header">
     <!-- 导航栏 -->
     <nav id="nav">
+      
       <div class="nav-info">
         <!-- 站点标题 -->
+        
         <h1>
+          <div
+            id="logo"
+            v-if="$siteConfig.logo">
+            <img :src="$siteConfig.logo" alt="Site Logo" />
+          </div>
           <saber-link
             class="title"
             rel="author"
