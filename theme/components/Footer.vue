@@ -27,9 +27,16 @@
     <!-- 联系方式 -->
     <p class="contact">
       <ul>
+        <!-- Contacts -->
         <li v-for="(item, name, i) in contact" v-if="contact[name]">
           <a :href="importContact(name, 'url') + item" :title="contact[name]">
             <i :class="importContact(name, 'icon')"></i>
+          </a>
+        </li>
+        <!-- RSS Feed -->
+        <li v-if="feed">
+          <a :href="feed.permalink" :title="feed.type">
+            <i class="fas fa-rss"></i>
           </a>
         </li>
       </ul>
