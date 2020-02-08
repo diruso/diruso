@@ -455,6 +455,11 @@
   // bottom: 0;
   // left: calc(50% - 275px);
   transform: translateY(-5px);
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+  }
   .screen-wrap {
     position: relative;
     width: 435px;
@@ -492,7 +497,8 @@
   .screen {
     width: 100%;
     height: 100%;
-    background: #4b4b4d;
+    // background: #4b4b4d;
+    background: #000;
     text-align: center;
   }
 

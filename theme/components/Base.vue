@@ -53,25 +53,14 @@ export default {
 					name: 'description',
 					content: description
 				},
-				{
-					name: 'apple-mobile-web-app-title',
-					content: '#1c1c1c'
-				},
-				{
-					name: 'application-name',
-					content: 'Shyrz'
-				},
+				
 				{
 					name: 'msapplication-TileColor',
-					content: '#1c1c1c'
-				},
-				{
-					name: 'msapplication-TileImage',
-					content: '/mstile-144x144.pn'
+					content: '#000000'
 				},
 				{
 					name: 'theme-color',
-					content: '#ffffff'
+					content: '#000000'
 				}
 			].filter(Boolean),
 			link: this.$feed

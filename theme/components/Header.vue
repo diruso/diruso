@@ -1,7 +1,7 @@
 <template>
 	<header id="header">
 		<EDC>
-			
+			<img id="logo" src="../../static/logo.svg" />
 		</EDC>
 		<!-- 导航栏 -->
 		<nav id="nav">
@@ -33,6 +33,7 @@
 
 <script>
 import EDC from '../components/EDC';
+
 import defaults from "../constants/defaults.yml";
 
 export default {
