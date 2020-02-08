@@ -3,7 +3,7 @@ import 'saber-highlight-css/default.css';
 import './styles/aeon.scss';
 
 
-export default ({ router }) => {
+export default ({ router, setHead }) => {
   // Progress bar is not needed on server-side
   if (process.browser) {
     // These dependencies are only bundled in client build
@@ -26,4 +26,18 @@ export default ({ router }) => {
       nprogress.done()
     })
   }
+
+  setHead({
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css'
+      },
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css'
+      // }
+    ],
+    // script: `mermaid.initialize({startOnLoad:true,theme:'neutral'});`
+  })
 }

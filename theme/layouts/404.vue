@@ -1,9 +1,12 @@
 <template>
-  <div class="notfound">
-    <h1>Page Not Found :(</h1>
+  <div id="_404">
+    <div class="_404-info">
+      <h1>404</h1>
+      <p>我们生活在一个名为无知的平静小岛上，被无穷无尽的黑色海洋包围，而我们本就不该扬帆远航。</p>
+    </div>
     <span v-if="isDemo">maybe it's moved to <a :href="demoURL" target="_blank">{{ demoURL }}</a></span>
-    <div class="backhome">
-      <saber-link to="/">← Back to HomePage</saber-link>
+    <div class="_404-back">
+      <saber-link to="/">« 回到首页</saber-link>
     </div>
   </div>
 </template>
@@ -28,17 +31,41 @@ export default {
 }
 </script>
 
-<style scoped>
-h1 {
-  font-family: Helvetica;
-  font-weight: 300;
-  font-size: 3rem;
+<style lang="scss" scoped>
+@import '../styles/variable.scss';
+@import '../styles/font.scss';
+
+#_404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
 }
-.notfound {
-  max-width: 500px;
-  margin: 0 40px;
+
+._404-info {
+  h1 {
+    margin: 0 0 48px;
+    font-size: 240px;
+  }
+  p {
+    width: 50vw;
+    font-size: 36px;
+    line-height: 2;
+  }
 }
-.backhome {
-  margin: 20px 0;
+
+._404-back {
+  font-size: 24px;
+  
+  a {
+    text-decoration: none;
+    &:hover, &:active {
+      color: $highlight;
+    }
+  }
 }
+
 </style>

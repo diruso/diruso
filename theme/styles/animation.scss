@@ -6,3 +6,20 @@
   from, to { box-shadow: 1px 0 0 0 transparent; }
   50% { box-shadow: 1px 0 0 0; }
 }
+
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  opacity: 0;
+}

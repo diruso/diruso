@@ -12,8 +12,8 @@
     "dev:example": "saber example",
     "build:example": "saber build example"
   },
-  "repository": "https://github.com/diruso/saber-theme-astral.git",
-  "author": "Diruso <i@diruso.me>",
+  "repository": "https://github.com/diruso/saber-theme-aeon.git",
+  "author": "Shyrz <i@sh7.me>",
   "license": "MIT",
   "dependencies": {
     "nprogress": "^0.2.0",

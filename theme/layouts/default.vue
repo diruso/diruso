@@ -1,10 +1,13 @@
 <template>
 	<Base :page="page">
-		<div class="home">
+		<div id="home">
 			<slot name="default"></slot>
 
-			<ul class="post-list" v-if="page.posts && page.posts.length > 0">
-				<li class="post" v-for="post in page.posts" :key="post.attributes.permalink">
+			<ul v-if="page.posts && page.posts.length > 0">
+				<li
+					v-for="post in page.posts"
+					:key="post.attributes.permalink"
+					class="post-item">
 					<span class="post-meta">
 						<span class="date">{{ formatDate(post.attributes.createdAt) }}</span>
 						<span
@@ -13,10 +16,8 @@
 							:key="category.toString()"
 						>{{ category }}</span>
 					</span>
-					<h3>
-						<saber-link class="post-link" :to="post.attributes.permalink">{{ post.attributes.title }}</saber-link>
-					</h3>
-				</li>
+					<saber-link class="post-link" :to="post.attributes.permalink">{{ post.attributes.title }}</saber-link>
+				</liclass="post-item">
 			</ul>
 
       <div class="pagination">
@@ -49,55 +50,62 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/aeon.scss';
+@import '../styles/variable.scss';
+@import '../styles/font.scss';
 
-.home {
-	padding: 0 21px;
-	.post-list {
-		list-style: none;
-		li.post {
-			
-			
-			.post-meta {
-				font-family: $aeon-font-sans, $aeon-font-latin-sans, sans-serif;
-				font-size: 0.85em;
-				font-weight: 300;
-				font-style: italic;
-				color: $gray;
+#home {
+	width: 732px;
+	// padding: 21px;
+	// background: #FAFAFA;
+}
 
-				.date {
-					margin-right: 5px;
-				}
-				.categories {
+#home ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
 
-				}
-			}
-			h3 a.post-link {
-				position: relative;
-				font-weight: 600;
-				text-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-				&:before {
-					content: "»";
-					position: absolute;
-					left: -1em;
-					// top: 50%;
-					// margin-top: -8px;
-					// width: 6px;
-					// height: 6px;
-					line-height: 1em;
-					color: $gray;
-					// background: $black;
-				}
+.post-item {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 12px;
+}
 
-				&:hover {
+.post-meta {
+	margin-bottom: 12px;
+	font-family: $aeon-font-latin-sans, $aeon-font-sans, sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	font-style: italic;
+	color: $dark-4;
+	.date, .category {
 
-				}
-
-				&:hover:before {
-					color: $highlight;
-				}
-			}
-		}
 	}
 }
+
+.post-link {
+	position: relative;
+	padding-left: 1em;
+	font-size: 18px;
+	font-weight: 600;
+	&:before {
+		content: "»";
+		position: absolute;
+		left: 0;
+		line-height: 1em;
+		color: $dark-4;
+		// background: $black;
+	}
+
+	&:hover:before {
+		color: $highlight;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	#home {
+		// background: black;
+	}
+}
+
 </style>

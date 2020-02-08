@@ -25,21 +25,19 @@
       </a>
 		</p>
     <!-- 联系方式 -->
-    <p class="contact">
-      <ul>
-        <!-- Contacts -->
-        <li v-for="(item, name, i) in contact" v-if="contact[name]">
-          <a :href="importContact(name, 'url') + item" :title="contact[name]">
-            <i :class="importContact(name, 'icon')"></i>
-          </a>
-        </li>
-        <!-- RSS Feed -->
-        <li v-if="feed">
-          <a :href="feed.permalink" :title="feed.type">
-            <i class="fas fa-rss"></i>
-          </a>
-        </li>
-      </ul>
+    <p class="social">
+      <!-- Social -->
+      <span class="social-item" v-for="(item, name, i) in social" v-if="social[name]">
+        <a :href="getSocials(name, 'url') + item" :title="social[name]">
+          <i v-if="getSocials(name, 'icon')" :class="getSocials(name, 'icon')"></i>
+        </a>
+      </span>
+      <!-- RSS Feed -->
+      <span class="social-item" v-if="feed">
+        <a :href="feed.permalink" :title="feed.type">
+          <i class="fas fa-rss"></i>
+        </a>
+      </span>
     </p>
 	</footer>
 </template>
@@ -50,17 +48,83 @@ import d_ from '../constants/defaults.yml';
 export default {
   components: { },
   computed: {
-    contact() {
-      return this.$themeConfig.contact || {}
+    social() {
+      return this.$themeConfig.social || {}
     },
     feed() {
       return this.$feed
     },
   },
   methods: {
-    importContact: function(name, key) {
-      return d_.contact[name] && d_.contact[name][key];
+    getSocials: function(name, key) {
+      return d_.social[name] ? d_.social[name][key] : false;
     }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import '../styles/variable.scss';
+@import '../styles/font.scss';
+
+#footer {
+  position: relative;
+  padding: 50px 0;
+  background: inherit;
+  text-align: center;
+  font-family: $aeon-font-sans, $aeon-font-latin-sans, sans-serif, $aeon-font-emoji;
+  font-size: 14px;
+  font-weight: 300;
+  color: $gray;
+  z-index: 9999;
+}
+
+.license {
+  .license-link {
+    font-weight: 500;
+    img {
+      margin-bottom: -1px;
+    }
+  }
+}
+
+.copyright {
+  a.power,
+  a.theme {
+    margin-right: 2px;
+    font-weight: 500;
+  }
+  a.power {
+    // border-color:  #E9B439;
+    color: #49828d;
+    &:hover,
+    &:active {
+      // border-bottom-color: #49828D;
+      // background: #49828D;
+      color: #e9b439;
+    }
+    svg {
+      margin-bottom: -2px;
+    }
+  }
+
+  a.theme:hover,
+  a.theme:active {
+    color: $highlight;
+  }
+}
+
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 960px;
+  margin: 14px auto;
+}
+
+.social-item {
+  padding: 0 2px;
+  margin: 0 3px;
+}
+</style>

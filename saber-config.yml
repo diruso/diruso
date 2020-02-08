@@ -1,0 +1,121 @@
+# 永久链接
+permalinks:
+  post: /blog/:year/:month/:slug
+  page: /:slug
+
+# 站点配置
+siteConfig:
+  lang: zh-Hans
+  url: https://shyrz.me
+  domain: shyrz.me
+  title: Shyrz
+  description: Life, the Universe and Everything.
+  keywords:
+    - shyrz
+    - saber
+    - saber-theme-aeon
+    - blog
+    - 博客
+  # logo: https://cdn.jsdelivr.net/gh/shyrz/images@master/uPic/logo-2020-02-05_w4kJhU.png
+  author: Shyrz
+  avatar:
+  pagination:
+    prevPage: 返回
+    nextPage: 更多文章
+    prevPost: 前一篇
+    nextPost: 后一篇
+
+# 主题配置
+theme: ./theme
+themeConfig:
+  since: 2015
+  nav:
+    - text: 首页
+      link: /
+    - text: 推介
+      link: /recommend
+    - text: 关于
+      link: /about
+    - text: 友人
+      link: /friends
+  social:
+    github: shyrz # username
+    medium: shyrz # username
+    neteasemusic: 17761516 # uid
+    steam: phantr4x # username
+    twitter: shyrz__ # username
+    weibo: 3703581552 # personal domain or uid
+    # douban: creatorlanslot # domain
+    zhihu: Phantr4x # username
+    telegram: shyrzz # username
+    keybase: shyrz # username
+  disqus: shyrz # shortname
+
+# Markdown配置
+markdown:
+  options:
+    html: true
+    xhtmlOut: true
+    breaks: true
+    linkify: true
+    typographer: true
+  headings:
+    permalink: true
+    permalinkBefore: true
+    permalinkSymbol: "#"
+  plugins:
+    - resolve: markdown-it-implicit-figures
+      options:
+        dataType: true
+        figcaption: true
+    - resolve: markdown-it-sub
+    - resolve: markdown-it-sup
+    - resolve: markdown-it-ins
+    - resolve: markdown-it-mark
+    - resolve: markdown-it-abbr
+    # - resolve: markdown-it-toc-done-right
+      # options:
+        # placeholder: \$\{toc\}
+        # containerClass: table-of-contents
+        # containerId:
+        # listClass:
+        # itemClass:
+        # linkClass:
+        # level: 1
+        # listType: ul # ol
+    - resolve: markdown-it-footnote
+    - resolve: markdown-it-task-lists
+    - resolve: markdown-it-deflist
+    - resolve: markdown-it-kramdown-attrs
+    # - resolve: markdown-it-container
+    - resolve: markdown-it-katex
+    # - resolve: markdown-it-texmath
+      # options:
+        # delimiters: julia
+    # - resolve: ./packages/markdown-it-mermaid
+      # options:
+      #   startOnLoad: true
+      #   securityLevel: true
+      #   theme: default
+      #   flowchart:
+      #     htmlLabels: false
+      #     useMaxWidth: true
+    - resolve: markdown-it-cjk-breaks
+
+# 插件
+plugins:
+  - resolve: saber-plugin-query-posts
+    options:
+      permalinks:
+        category: /category/:name
+        tag: /tag/:name
+  - resolve: saber-plugin-feed
+    options:
+      atomFeed: /atom.xml
+      jsonFeed: /feed.json
+  - resolve: ./packages/saber-plugin-image
+    options:
+      sizes: [1200, 720, 480]
+      placeholder: true
+      blendIn: true
+  # - resolve: ./packages/saber-plugin-mermaid
