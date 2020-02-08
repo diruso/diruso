@@ -6,14 +6,16 @@ layout: page
 
 九五年生，现居南昌。
 
-昵称 Shyrz，曾用昵称有 ~~GeeKavalon~~、~~Phantr4x~~。
+当前 ID 是 Shyrz，网络上曾使用过多个 ID（~~GeeKavalon~~、~~Phantr4x~~）。
 
 ## 爱好
 
-+ **阅读**、**思考**、**哲学**
-+ **编程**、**设计**
-+ **音乐**、**播客**
-+ **烹饪**
++ **<i class="fas fa-book"></i> 阅读**、**<i class="fas fa-feather-alt"></i> 写作**、**<i class="far fa-lightbulb"></i> 思考**
++ **<i class="fas fa-code"></i> 编程**、**<i class="fas fa-bezier-curve"></i> 设计**
++ **<i class="fas fa-gamepad"></i> 游戏**[^game]
+  [^game]: 除了单机游戏、网络游戏以外，还痴迷于 **<i class="fas fa-dice-d20"></i> 桌面战棋游戏** [<i class="fab fa-d-and-d"></i>龙与地下城](https://zh.wikipedia.org/wiki/%E9%BE%99%E4%B8%8E%E5%9C%B0%E4%B8%8B%E5%9F%8E) 以及 [<i class="fas fa-cog"></i>战锤40000](https://zh.wikipedia.org/wiki/%E6%88%98%E9%94%A440000) 中的设定。
++ **<i class="fas fa-headphones-alt"></i> 音乐**、**<i class="fas fa-podcast"></i> 播客**
++ **<i class="fas fa-hamburger"></i> 烹饪**
 
 ## 原则
 
@@ -37,6 +39,6 @@ layout: page
 ## 通过以下途径可以找到我
 
 * <i class="fas fa-envelope"></i> [i@sh7.me](mailto:i@sh7.me)
-* <i class="fab fa-twitter"></i> [@shyrzzz](https://twitter.com/shyrzzz)
+* <i class="fab fa-twitter"></i> [@shyrz__](https://twitter.com/shyrz__)
 * <i class="fab fa-weibo"></i> [@Phantr4x](https://weibo.com/Phantr4x)
 * <i class="fab fa-github"></i> [@shyrz](https://github.com/shyrz)
