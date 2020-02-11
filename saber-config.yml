@@ -8,8 +8,9 @@ siteConfig:
   lang: zh-Hans
   url: https://shyrz.me
   domain: shyrz.me
-  title: Shyrz
-  description: Life, the Universe and Everything.
+  title: 蒼白騎士
+  # titleImage: title.png
+  description: 文章墨点，述诸字节
   keywords:
     - shyrz
     - saber
@@ -17,6 +18,7 @@ siteConfig:
     - blog
     - 博客
   # logo: https://cdn.jsdelivr.net/gh/shyrz/images@master/uPic/logo-2020-02-05_w4kJhU.png
+  logo: logo.gif
   author: Shyrz
   avatar:
   pagination:
@@ -118,4 +120,5 @@ plugins:
       sizes: [1200, 720, 480]
       placeholder: true
       blendIn: true
+  - resolve: saber-plugin-prismjs
   # - resolve: ./packages/saber-plugin-mermaid
