@@ -116,44 +116,7 @@ img {
     &:active {
       color: $light-3;
     }
-  }
-
-  .info,
-  .success,
-  .warning,
-  .error,
-  .tips,
-  .todo {
-    // border: none;
-    background: inherit;
-  }
-
-  .info {
-    border-color: $blue-dark;
-  }
-  .success {
-    border-color: $green-dark;
-  }
-  .warning {
-    border-color: $yellow-dark;
-  }
-  .error {
-    border-color: $red-dark;
-  }
-  .tips {
-    border-color: $gray;
-    &:before {
-      color: $gray;
-    }
-  }
-  .todo {
-    border-color: $orange-dark;
-    &:before {
-      color: $orange-dark;
-    }
-  }
-
-  
+  }  
 }
 
 .mermaid {

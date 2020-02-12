@@ -13,6 +13,51 @@
         </h2>
       </header>
 
+      <!-- 文章信息 -->
+      <div class="post-meta">
+        <!-- 发布 -->
+        <span class="publish">
+          <!-- 作者 -->
+          <!-- <span class="publish-author">{{ page.author ? page.author : $siteConfig.author }}</span> -->
+          <!-- 写于 -->
+          <!-- 时间 -->
+          <time
+            class="publish-time"
+            :datetime="page.attributes.createdAt"
+            itemprop="datePublished">{{ formatDate(page.attributes.createdAt) }}</time>
+        </span>
+        <!-- 分类 -->
+        <span class="category" v-if="page.attributes.categories">
+          <span class="label">
+            ·
+            <!-- <i class="fas fa-folder"></i> -->
+          </span>
+          <span class="categories">
+            <a
+              v-for="(category, i) in page.attributes.categories"
+              :key="category.toString()"
+              :href="page.attributes.categoriesInfo[i].permalink"
+              >{{ category }}</a
+            >
+          </span>
+        </span>
+        <!-- 标签 -->
+        <span class="tag" v-if="page.attributes.tags">
+          <span class="label">
+            ·
+            <!-- <i class="fas fa-tag"></i> -->
+          </span>
+          <span class="tags">
+            <a
+              v-for="(tag, i) in page.attributes.tags"
+              :key="tag.toString()"
+              :href="page.attributes.tagsInfo[i].permalink"
+              >#{{ tag }}</a
+            >
+          </span>
+        </span>
+      </div>
+
       <!-- 文章内容 -->
       <article class="han-init-context">
         <slot name="default"></slot>
@@ -30,49 +75,6 @@
           <p>
             本作品采用<a class="license-link" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
           </p>
-        </div>
-        
-        <!-- 文章信息 -->
-        <div class="post-meta">
-          <!-- 发布 -->
-          <div class="publish">
-            <!-- 作者 -->
-            <span class="publish-author">{{ page.author ? page.author : $siteConfig.author }}</span>
-            写于
-            <!-- 时间 -->
-            <time
-              class="publish-time"
-              :datetime="page.attributes.createdAt"
-              itemprop="datePublished">{{ formatDate(page.attributes.createdAt) }}</time>
-          </div>
-          <!-- 分类 -->
-          <div class="category" v-if="page.attributes.categories">
-            <span class="label">
-              <i class="fas fa-folder"></i>
-            </span>
-            <span class="categories">
-              <a
-                v-for="(category, i) in page.attributes.categories"
-                :key="category.toString()"
-                :href="page.attributes.categoriesInfo[i].permalink"
-                >{{ category }}</a
-              >
-            </span>
-          </div>
-          <!-- 标签 -->
-          <div class="tag" v-if="page.attributes.tags">
-            <span class="label">
-              <i class="fas fa-tag"></i>
-            </span>
-            <span class="tags">
-              <a
-                v-for="(tag, i) in page.attributes.tags"
-                :key="tag.toString()"
-                :href="page.attributes.tagsInfo[i].permalink"
-                >{{ tag }}</a
-              >
-            </span>
-          </div>
         </div>
       </footer>
 
@@ -114,21 +116,21 @@
     </div>
 
     <!-- Table of Contents -->
-    <Toc
+    <!-- <Toc
       v-if="page.toc === true && page.markdownHeadings && page.markdownHeadings.length > 0"
       :headings="page.markdownHeadings"
       useTrigger
       mode="inline"
       v-slot:trigger>
       <i class="fas fa-bars"></i>
-    </Toc>
+    </Toc> -->
   </Base>
 </template>
 
 <script>
 import Base from "../components/Base";
 
-import Toc from "../components/Toc";
+// import Toc from "../components/Toc";
 import Mermaid from "../components/Mermaid";
 
 import Disqus from "../components/_plugins/Disqus";
@@ -138,7 +140,7 @@ import formatDate from "../scripts/formatDate";
 export default {
   components: {
     Base,
-    Toc,
+    // Toc,
     Mermaid,
     Disqus
   },
@@ -164,6 +166,7 @@ export default {
 #post {
   position: relative;
   width: 732px;
+  margin: 0 auto;
   padding: 21px 0 12px;
   border-radius: 7px;
   background: #FFF;
@@ -215,28 +218,38 @@ h2.post-subtitle {
 }
 
 .post-meta {
-  margin: 0 21px;
+  font-family: $aeon-font-minor-serif;
+  margin: 0 21px 12px;
 }
 
 .publish {
   // grid-column-start: 1;
   // grid-column-end: 3;
   color: $gray;
-  
 }
 .publish-author, .publish-time {
-  font-family: $aeon-font-latin-serif, $aeon-font-serif, sans-serif;
-  font-weight: 600;
-  color: $dark-3;
+  font-family: $aeon-font-minor-serif;
+  // font-weight: 600;
+  // color: $dark-3;
+  color: $gray;
 }
+
 
 .category,
 .tag {
-  margin-top: 12px;
+  // margin-top: 12px;
+  
   color: $gray;
+  
+}
+
+.categories,
+.tag {
   a {
-    margin-right: 12px;
-    font-weight: 300;
+    // margin-right: 12px;
+    // font-weight: 300;
+    font-family: $aeon-font-minor-serif;
+    text-decoration: none;
     color: $gray;
     &:hover,
     &:active {

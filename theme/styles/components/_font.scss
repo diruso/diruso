@@ -10,6 +10,7 @@
 
 
 @import 'fonts/merriweather';
+@import 'fonts/ibm-plex-serif';
 // @import 'fonts/noto-serif';
 
 // Custom Font
@@ -108,5 +109,6 @@
 $aeon-font-serif: "源流明體";
 // $aeon-font-latin-sans: Fira Sans, Avenir Next, Avenir, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica Neue, Arial;
 $aeon-font-latin-serif: 'Merriweather', Georgia, 'Times New Roman';
+$aeon-font-minor-serif: 'IBM Plex Serif';
 $aeon-font-mono: JetBrains Mono, Fira Code, Source Code Pro, PT Mono, Monaco, menlo, 'Courier New', Courier, monospace;
 $aeon-font-emoji: 'Apple Color Emoji', 'Segoe UI Emoji';

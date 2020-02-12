@@ -12,6 +12,7 @@
         </h2>
       </header>
 
+      <!-- 页面内容 -->
       <article class="han-init-context">
         <slot name="default"></slot>
       </article>
@@ -29,26 +30,26 @@
     </div>
 
     <!-- Table of Contents -->
-    <Toc
+    <!-- <Toc
       v-if="page.toc === true && page.markdownHeadings && page.markdownHeadings.length > 0"
       :headings="page.markdownHeadings"
       useTrigger
       mode="inline"
       v-slot:trigger>
       <i class="fas fa-bars"></i>
-    </Toc>
+    </Toc> -->
   </Base>
 </template>
 
 <script>
 import Base from '../components/Base';
 
-import Toc from "../components/Toc";
+// import Toc from "../components/Toc";
 import Disqus from "../components/_plugins/Disqus";
 
 export default {
   props: ['page'],
-  components: { Base, Toc, Disqus },
+  components: { Base, Disqus },
 }
 </script>
 
@@ -59,10 +60,11 @@ export default {
 #page {
   position: relative;
   width: 732px;
+  margin: 0 auto;
   padding: 21px 0 12px;
+  border-radius: 7px;
+  background: white;
   z-index: 9999;
-  // transition: opacity 0.25s;
-  // background: #fafafa;
 }
 
 .page-header {

@@ -1,10 +1,7 @@
 <template>
 	<div id="app" @mousemove="handleMouseMove">
-		<!-- <div id="top">
-			<div id="topbar"></div>
-		</div> -->
-		
 		<EDC />
+
 		<div id="wrapper">
 			<Header
 				:siteTitle="siteTitle"
@@ -12,19 +9,14 @@
 				:animation="'translateX(' + x * 0.005 + 'px) translateY(' + y * 0.005 + 'px)'"
 			/>
 
-
-
 			<main id="container">
 				<div id="content">
 					<slot name="default" />
 				</div>
 			</main>
-			<Footer :siteTitle="siteTitle" />
-			<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.js"></script> -->
-			<!-- <script type="text/javascript">Han( document.getElementById('content')).render()</script> -->
-		</div>
 
-		
+			<Footer :siteTitle="siteTitle" />
+		</div>
 		
 	</div>
 </template>

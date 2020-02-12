@@ -83,7 +83,7 @@ export default {
 #home {
 	width: 732px;
 	margin: 0 auto;
-	padding: 9px 21px;
+	// padding: 9px 21px;
 	border-radius: 7px;
 	// background: #FFF;
 }
@@ -132,6 +132,8 @@ export default {
 }
 
 .post-meta {
+	font-family: $aeon-font-minor-serif;
+	font-size: 14px;
 	font-weight: 300;
 	color: $gray;
 }

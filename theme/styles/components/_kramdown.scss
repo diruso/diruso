@@ -32,7 +32,7 @@
   background: $light-1;
   border-color: $gray;
   &:before {
-    content: "⚠️";
+    content: "!";
     margin-right: 16px;
     color: $gray;
   }
@@ -41,7 +41,7 @@
   background: lighten($color: $orange, $amount: 40%);
   border-color: $orange;
   &:before {
-    content: "☑️";
+    content: "✓";
     margin-right: 16px;
     color: $orange;
   }
@@ -66,4 +66,42 @@
 
 .align-right {
   text-align: right;
+}
+
+
+@media screen and (prefers-color-scheme: dark) {
+  .info,
+  .success,
+  .warning,
+  .error,
+  .tips,
+  .todo {
+    // border: none;
+    background: inherit;
+  }
+
+  .info {
+    border-color: $blue-dark;
+  }
+  .success {
+    border-color: $green-dark;
+  }
+  .warning {
+    border-color: $yellow-dark;
+  }
+  .error {
+    border-color: $red-dark;
+  }
+  .tips {
+    border-color: $gray;
+    &:before {
+      color: $gray;
+    }
+  }
+  .todo {
+    border-color: $orange-dark;
+    &:before {
+      color: $orange-dark;
+    }
+  }
 }
