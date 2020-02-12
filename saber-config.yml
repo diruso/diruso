@@ -1,6 +1,6 @@
 # 永久链接
 permalinks:
-  post: /blog/:year/:month/:slug
+  post: /post/:year/:month/:slug
   page: /:slug
 
 # 站点配置
@@ -9,7 +9,6 @@ siteConfig:
   url: https://shyrz.me
   domain: shyrz.me
   title: 蒼白騎士
-  # titleImage: title.png
   description: 文章墨点，述诸字节
   keywords:
     - shyrz
@@ -17,8 +16,7 @@ siteConfig:
     - saber-theme-aeon
     - blog
     - 博客
-  # logo: https://cdn.jsdelivr.net/gh/shyrz/images@master/uPic/logo-2020-02-05_w4kJhU.png
-  logo: logo.gif
+  logo: /logo.gif
   author: Shyrz
   avatar:
   pagination:
@@ -62,9 +60,9 @@ markdown:
     linkify: true
     typographer: true
   headings:
-    permalink: true
-    permalinkBefore: true
-    permalinkSymbol: "#"
+    permalink: false
+  #   permalinkBefore: true
+  #   permalinkSymbol: '#'
   plugins:
     - resolve: markdown-it-implicit-figures
       options:
@@ -114,7 +112,7 @@ plugins:
   - resolve: saber-plugin-feed
     options:
       atomFeed: /atom.xml
-      jsonFeed: /feed.json
+      # jsonFeed: /feed.json
   - resolve: ./packages/saber-plugin-image
     options:
       sizes: [1200, 720, 480]
