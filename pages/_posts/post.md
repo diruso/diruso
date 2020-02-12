@@ -151,8 +151,9 @@ Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
 Like links, Images also have a footnote style syntax
 
-![Alt text][id]{:.shadow-it}
-{:.round-it}
+![Alt text][id]{:.shadow}
+{:.round}
+{:.right}
 
 With a reference later in the document defining the URL location:
 
@@ -245,11 +246,6 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 
 *[HTML]: Hyper Text Markup Language
 
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-*here be dragons*
-:::
 
 ### Kramdown
 
