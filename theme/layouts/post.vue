@@ -203,10 +203,10 @@ h2.post-subtitle {
 }
 
 .post-note {
-  margin-bottom: 42px;
+  // margin-bottom: 42px;
   padding: 30px 21px 21px;
   text-align: center;
-  // background: $light-0;
+  background: $light-1;
   p {
     margin: 0 0 21px;
     font-weight: 200;
@@ -315,9 +315,9 @@ h2.post-subtitle {
   }
 
   .post-note {
-    // background: $dark-0;
-    border-left: 1px solid $dark-0;
-    border-right: 1px solid $dark-0;
+    background: $dark-0;
+    // border-left: 1px solid $dark-0;
+    // border-right: 1px solid $dark-0;
     a {
       color: $gray;
       &:hover,

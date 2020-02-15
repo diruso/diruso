@@ -95,7 +95,7 @@ h2.page-subtitle {
 
 @media (prefers-color-scheme: dark) {
   #page {
-    // background: $dark-0;
+    background: #0D0D0F;
   }
 
   h1.page-title {

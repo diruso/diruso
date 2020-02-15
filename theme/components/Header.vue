@@ -71,8 +71,6 @@ nav#nav {
 }
 
 
-
-
 .site {
 	display: flex;
   justify-content: center;
